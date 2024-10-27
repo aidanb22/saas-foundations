@@ -24,7 +24,15 @@ SECRET_KEY = 'django-insecure-1=5e+(4u8(ff15x3_u)q&c*og4tq7m76w$v@6ehiiucj5q10#w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# 1st thing to change for prod
+ALLOWED_HOSTS = [
+    ".railway.app"  # https://saas.prod.railway.app  ----> allows django to run on a domain like such
+]
+if DEBUG:
+    ALLOWED_HOSTS += [
+        "127.0.0.1",
+        "localhost"
+    ]
 
 # Application definition
 
