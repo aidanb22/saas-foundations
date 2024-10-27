@@ -7,3 +7,6 @@ watchPatterns = [
     "railway.toml",
     "Dockerfile",
 ]
+
+[service]
+start = "gunicorn saas.wsgi:application --bind 0.0.0.0:8080"
